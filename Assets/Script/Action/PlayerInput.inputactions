@@ -1,0 +1,33 @@
+{
+    "name": "PlayerInput",
+    "maps": [
+        {
+            "name": "Land",
+            "id": "9f28a307-376c-445c-8ed8-0e0fff80d8fe",
+            "actions": [
+                {
+                    "name": "Inventaire",
+                    "type": "Button",
+                    "id": "a7466572-6cf2-46b5-97ed-8227faf39c27",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "20617c9c-0212-4db4-bea3-237dd2d8f738",
+                    "path": "<Keyboard>/i",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Inventaire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
