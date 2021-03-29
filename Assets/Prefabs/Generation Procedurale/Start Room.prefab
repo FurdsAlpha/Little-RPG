@@ -85,6 +85,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3740072081456383594}
   - component: {fileID: 3740072081456383595}
+  - component: {fileID: 123738157335318873}
+  - component: {fileID: 719619455222649498}
   m_Layer: 5
   m_Name: Spawn point 2 (1)
   m_TagString: SpawnPoint
@@ -124,6 +126,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OpeningDirection: 4
+  Template: {fileID: 0}
+  _Template: {fileID: 0}
+  Spawned: 0
+--- !u!65 &123738157335318873
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3740072081456383597}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &719619455222649498
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3740072081456383597}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &3740072081479676210
 GameObject:
   m_ObjectHideFlags: 0
@@ -134,6 +168,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3740072081479676211}
   - component: {fileID: 3740072081479676208}
+  - component: {fileID: 3443871728054919058}
+  - component: {fileID: 3671865748008988462}
   m_Layer: 5
   m_Name: Spawn point 2
   m_TagString: SpawnPoint
@@ -173,6 +209,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OpeningDirection: 2
+  Template: {fileID: 0}
+  _Template: {fileID: 0}
+  Spawned: 0
+--- !u!65 &3443871728054919058
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3740072081479676210}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &3671865748008988462
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3740072081479676210}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &3740072081600943323
 GameObject:
   m_ObjectHideFlags: 0
@@ -600,6 +668,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3740072082696949259}
   - component: {fileID: 3740072082696949256}
+  - component: {fileID: 7552265839533312348}
+  - component: {fileID: 3890862898706137247}
   m_Layer: 5
   m_Name: Spawn point 1 (1)
   m_TagString: SpawnPoint
@@ -639,6 +709,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OpeningDirection: 3
+  Template: {fileID: 0}
+  _Template: {fileID: 0}
+  Spawned: 0
+--- !u!65 &7552265839533312348
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3740072082696949258}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &3890862898706137247
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3740072082696949258}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &3740072082773112094
 GameObject:
   m_ObjectHideFlags: 0
@@ -724,6 +826,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3740072082987545293}
   - component: {fileID: 3740072082987545290}
+  - component: {fileID: 2308747713926876990}
+  - component: {fileID: 5728536746060949681}
   m_Layer: 5
   m_Name: Spawn point 1
   m_TagString: SpawnPoint
@@ -763,6 +867,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OpeningDirection: 1
+  Template: {fileID: 0}
+  _Template: {fileID: 0}
+  Spawned: 0
+--- !u!65 &2308747713926876990
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3740072082987545292}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &5728536746060949681
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3740072082987545292}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &3740072083007026103
 GameObject:
   m_ObjectHideFlags: 0

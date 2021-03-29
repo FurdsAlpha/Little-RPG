@@ -384,6 +384,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5931910583728678546}
   - component: {fileID: 5931910583728678545}
+  - component: {fileID: 127225095576324500}
+  - component: {fileID: 7952857454850365854}
   m_Layer: 5
   m_Name: Spawn point 1
   m_TagString: SpawnPoint
@@ -423,6 +425,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OpeningDirection: 3
+  Template: {fileID: 0}
+  _Template: {fileID: 0}
+  Spawned: 0
+--- !u!65 &127225095576324500
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5931910583728678547}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &7952857454850365854
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5931910583728678547}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &5931910583732208708
 GameObject:
   m_ObjectHideFlags: 0
@@ -549,6 +583,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5931910584422944241}
   - component: {fileID: 5931910584422944240}
+  - component: {fileID: 3912380867148937483}
+  - component: {fileID: 820563256470098090}
   m_Layer: 5
   m_Name: Spawn point 2
   m_TagString: SpawnPoint
@@ -588,6 +624,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OpeningDirection: 1
+  Template: {fileID: 0}
+  _Template: {fileID: 0}
+  Spawned: 0
+--- !u!65 &3912380867148937483
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5931910584422944242}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &820563256470098090
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5931910584422944242}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &5931910584531608770
 GameObject:
   m_ObjectHideFlags: 0
