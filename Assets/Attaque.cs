@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class Attaque : MonoBehaviour
 {
-    public GameObject attaquePanelGUI;
     public void OnAttaque()
     {
-
+        
     }
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -20,4 +18,5 @@ public class Attaque : MonoBehaviour
     {
         
     }
+
 }
