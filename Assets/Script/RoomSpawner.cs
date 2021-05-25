@@ -10,49 +10,59 @@ public class RoomSpawner : MonoBehaviour
     // 3 == Left Door needed
     // 4 == Right Door needed
 
-    public RoomTemplate Template;
-    public GameObject _Template;
+    private RoomTemplate Templates;
     private int rand;
     public bool Spawned;
 
     public void Start()
     {
-        _Template = GameObject.FindGameObjectWithTag("Rooms");
-        Template = _Template.GetComponent<RoomTemplate>();
-        Invoke("Spawn", 0.1f);
+        Templates = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomTemplate>();
+        Invoke("Spawn", 0.2f);
     }
     public void Spawn()
     {
-
         if (Spawned == false)
         {
-
             if (OpeningDirection == 1)
             {
-                Instantiate(Template.DownRoom[rand], transform.position, Template.DownRoom[rand].transform.rotation);
+                rand = Random.Range(0, Templates.DownRoom.Length);
+                Instantiate(Templates.DownRoom[rand], transform.position, Templates.DownRoom[rand].transform.rotation);
+                Debug.Log("Un Room avec une porte vers le bas");
             }
             else if (OpeningDirection == 2)
             {
-                Instantiate(Template.UpRoom[rand], transform.position, Template.UpRoom[rand].transform.rotation);
+                rand = Random.Range(0, Templates.UpRoom.Length);
+                Instantiate(Templates.UpRoom[rand], transform.position, Templates.UpRoom[rand].transform.rotation);
+                Debug.Log("Un Room avec une porte vers le heut");
             }
             else if (OpeningDirection == 3)
             {
-                Instantiate(Template.LeftRoom[rand], transform.position, Template.LeftRoom[rand].transform.rotation);
+                rand = Random.Range(0, Templates.LeftRoom.Length);
+                Instantiate(Templates.LeftRoom[rand], transform.position, Templates.LeftRoom[rand].transform.rotation);
+                Debug.Log("Un Room avec une porte vers la Gauche");
             }
             else if (OpeningDirection == 4)
             {
-                Instantiate(Template.RightRoom[rand], transform.position, Template.RightRoom[rand].transform.rotation);
+                rand = Random.Range(0, Templates.RightRoom.Length);
+                Instantiate(Templates.RightRoom[rand], transform.position, Templates.RightRoom[rand].transform.rotation);
+                Debug.Log("Un Room avec une porte vers la droite");
             }
             Spawned = true;
         } 
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("SpawnPoint") && other.GetComponent<RoomSpawner>().Spawned == true)
+        if (other.GetComponent<RoomSpawner>().Spawned == false && Spawned == false == Spawned == false)
         {
             Destroy(gameObject);
         }
+        else if (other.GetComponent<RoomSpawner>().Spawned == false && Spawned == false)
+        {
+            Instantiate(Templates.closedRoom, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
+        Spawned = true;
     }
 }
 
