@@ -1,0 +1,55 @@
+{
+    "name": "CombatControl",
+    "maps": [
+        {
+            "name": "Player",
+            "id": "4da8a750-1938-49ad-97ab-964adeb0fc80",
+            "actions": [
+                {
+                    "name": "Move",
+                    "type": "Button",
+                    "id": "2518d8d8-28d2-449e-ab4b-4a154c10f1b9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "ZQSD",
+                    "id": "51ed02c5-36b2-467b-b602-f1615e5e2bc1",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "94c63fbd-0d20-4ab7-8700-a97a0769d62a",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "d94a545b-62d6-4778-9c5c-9c32d58e622b",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
