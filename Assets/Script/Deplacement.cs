@@ -12,7 +12,6 @@ public class Deplacement : MonoBehaviour
     public float direction;
     public LineRenderer ligne;
 
-
     private void Start()
     {
         poinDAncrage.transform.position = adversair.transform.position + Player.transform.position;
@@ -33,12 +32,13 @@ public class Deplacement : MonoBehaviour
 
     public void SetLignePosition()
     {
-        ligne.SetPosition(0, Player.transform.position);
-        ligne.SetPosition(1, adversair.transform.position);
+        ligne.SetPosition(0, Player.transform.position + new Vector3(0, 0,1));
+        ligne.SetPosition(1, adversair.transform.position + new Vector3(0,0,1));
         Debug.Log("La ligne a corectement été positioné");
     }
-    public void OnMove(CombatControl inputActions)
+    public void OnMove(InputValue value)
     {
-        Debug.Log("oui");
+        direction = value.Get<float>();
+        Debug.Log(value.Get<float>());
     }
 }

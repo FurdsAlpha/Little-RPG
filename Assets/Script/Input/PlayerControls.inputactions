@@ -1,14 +1,14 @@
 {
-    "name": "CombatControl",
+    "name": "PlayerControls",
     "maps": [
         {
-            "name": "Player",
-            "id": "4da8a750-1938-49ad-97ab-964adeb0fc80",
+            "name": "Combat",
+            "id": "5b88a711-3a0e-4c51-b929-818e5f648885",
             "actions": [
                 {
                     "name": "Move",
                     "type": "Button",
-                    "id": "2518d8d8-28d2-449e-ab4b-4a154c10f1b9",
+                    "id": "d0b3b408-beec-4f38-b831-8b34d7b86c0d",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -16,8 +16,8 @@
             ],
             "bindings": [
                 {
-                    "name": "ZQSD",
-                    "id": "51ed02c5-36b2-467b-b602-f1615e5e2bc1",
+                    "name": "Arrow",
+                    "id": "74aa6525-802b-4530-b846-2acd836ac908",
                     "path": "1DAxis",
                     "interactions": "",
                     "processors": "",
@@ -28,7 +28,7 @@
                 },
                 {
                     "name": "negative",
-                    "id": "94c63fbd-0d20-4ab7-8700-a97a0769d62a",
+                    "id": "8fde6df6-3e79-4cf8-8884-dd9a71dfb56e",
                     "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
@@ -39,7 +39,7 @@
                 },
                 {
                     "name": "positive",
-                    "id": "d94a545b-62d6-4778-9c5c-9c32d58e622b",
+                    "id": "14d372fb-db8d-4aa2-9e35-d1b0d85cc9bc",
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
