@@ -4,32 +4,21 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public float life;
-    public float damage;
+    public GameObject player;
+    public float Life = 1f;
 
-    public GameObject[] AttaquePanel;
-    public Vector3 offset;
-
-    // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
-        AttaquePanel = GameObject.FindGameObjectsWithTag("Attaque Panel");
+        player = GameObject.FindGameObjectWithTag("Player");
     }
-
-    // Update is called once per frame
-    void Update()
+    public void Target()
     {
-        
+        player.GetComponent<Deplacement>().adversaire = this.gameObject;
+        player.GetComponent<Deplacement>().SetPoinEncrage();
     }
-    public void TakeDamage()
+    
+    public void GetAttaked()
     {
-        life -= 1;
-    }
-
-    public void OnAttaquePanel()
-    {
-        AttaquePanel[0].SetActive(true);
-        AttaquePanel[0].transform.position = this.transform.position + offset;
-        AttaquePanel[0].transform.parent = this.transform;
+        Life -= player.GetComponent<Deplacement>().GetComponent<Armes>().degat;
     }
 }
