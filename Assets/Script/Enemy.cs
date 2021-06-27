@@ -11,11 +11,11 @@ public class Enemy : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
     }
-    public void Target()
+    /*public void Target()
     {
         player.GetComponent<Deplacement>().adversaire = this.gameObject;
         player.GetComponent<Deplacement>().SetPoinEncrage();
-    }
+    }*/
     
     public void GetAttaked()
     {
