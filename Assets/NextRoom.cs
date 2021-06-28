@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class NextRoom : MonoBehaviour
 {
-    public GameObject MyCamera;
+    public GameObject[] Enemys;
+    private GameObject MyCamera;
     public Vector2 direction;
     // Start is called before the first frame update
     void Start()
@@ -19,6 +20,12 @@ public class NextRoom : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        MyCamera.transform.position += new Vector3(0,10,0);
+        if (other.tag == "Player")
+        {
+            MyCamera.transform.position = this.transform.position + new Vector3(0, 0, -10);
+            Enemys[0].SetActive(true);
+            Enemys[1].SetActive(true);
+            Enemys[2].SetActive(true);
+        }
     }
 }

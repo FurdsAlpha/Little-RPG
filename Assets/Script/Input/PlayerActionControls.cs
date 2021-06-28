@@ -67,9 +67,17 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""ContreAttaque"",
+                    ""name"": ""ResetPointEncrage"",
                     ""type"": ""Button"",
                     ""id"": ""1f2bf8c2-63f0-45f8-b4d0-b59b12e67b4f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Turn"",
+                    ""type"": ""Button"",
+                    ""id"": ""aaa2d686-f28d-4d5d-8c37-ff7fba731366"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -134,11 +142,11 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""4eb62176-8044-4512-97af-186b3dfddcb2"",
-                    ""path"": """",
+                    ""path"": ""<Keyboard>/r"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""ContreAttaque"",
+                    ""action"": ""ResetPointEncrage"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -196,6 +204,17 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2ef95888-e413-44b3-ba38-9eab7ce7c091"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Turn"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -210,7 +229,8 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
         m_Combat_AttaqueLourde = m_Combat.FindAction("AttaqueLourde", throwIfNotFound: true);
         m_Combat_AttaqueRapide = m_Combat.FindAction("AttaqueRapide", throwIfNotFound: true);
         m_Combat_AttaqueLongueDistance = m_Combat.FindAction("AttaqueLongueDistance", throwIfNotFound: true);
-        m_Combat_ContreAttaque = m_Combat.FindAction("ContreAttaque", throwIfNotFound: true);
+        m_Combat_ResetPointEncrage = m_Combat.FindAction("ResetPointEncrage", throwIfNotFound: true);
+        m_Combat_Turn = m_Combat.FindAction("Turn", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -266,7 +286,8 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
     private readonly InputAction m_Combat_AttaqueLourde;
     private readonly InputAction m_Combat_AttaqueRapide;
     private readonly InputAction m_Combat_AttaqueLongueDistance;
-    private readonly InputAction m_Combat_ContreAttaque;
+    private readonly InputAction m_Combat_ResetPointEncrage;
+    private readonly InputAction m_Combat_Turn;
     public struct CombatActions
     {
         private @PlayerActionControls m_Wrapper;
@@ -277,7 +298,8 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
         public InputAction @AttaqueLourde => m_Wrapper.m_Combat_AttaqueLourde;
         public InputAction @AttaqueRapide => m_Wrapper.m_Combat_AttaqueRapide;
         public InputAction @AttaqueLongueDistance => m_Wrapper.m_Combat_AttaqueLongueDistance;
-        public InputAction @ContreAttaque => m_Wrapper.m_Combat_ContreAttaque;
+        public InputAction @ResetPointEncrage => m_Wrapper.m_Combat_ResetPointEncrage;
+        public InputAction @Turn => m_Wrapper.m_Combat_Turn;
         public InputActionMap Get() { return m_Wrapper.m_Combat; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -305,9 +327,12 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
                 @AttaqueLongueDistance.started -= m_Wrapper.m_CombatActionsCallbackInterface.OnAttaqueLongueDistance;
                 @AttaqueLongueDistance.performed -= m_Wrapper.m_CombatActionsCallbackInterface.OnAttaqueLongueDistance;
                 @AttaqueLongueDistance.canceled -= m_Wrapper.m_CombatActionsCallbackInterface.OnAttaqueLongueDistance;
-                @ContreAttaque.started -= m_Wrapper.m_CombatActionsCallbackInterface.OnContreAttaque;
-                @ContreAttaque.performed -= m_Wrapper.m_CombatActionsCallbackInterface.OnContreAttaque;
-                @ContreAttaque.canceled -= m_Wrapper.m_CombatActionsCallbackInterface.OnContreAttaque;
+                @ResetPointEncrage.started -= m_Wrapper.m_CombatActionsCallbackInterface.OnResetPointEncrage;
+                @ResetPointEncrage.performed -= m_Wrapper.m_CombatActionsCallbackInterface.OnResetPointEncrage;
+                @ResetPointEncrage.canceled -= m_Wrapper.m_CombatActionsCallbackInterface.OnResetPointEncrage;
+                @Turn.started -= m_Wrapper.m_CombatActionsCallbackInterface.OnTurn;
+                @Turn.performed -= m_Wrapper.m_CombatActionsCallbackInterface.OnTurn;
+                @Turn.canceled -= m_Wrapper.m_CombatActionsCallbackInterface.OnTurn;
             }
             m_Wrapper.m_CombatActionsCallbackInterface = instance;
             if (instance != null)
@@ -330,9 +355,12 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
                 @AttaqueLongueDistance.started += instance.OnAttaqueLongueDistance;
                 @AttaqueLongueDistance.performed += instance.OnAttaqueLongueDistance;
                 @AttaqueLongueDistance.canceled += instance.OnAttaqueLongueDistance;
-                @ContreAttaque.started += instance.OnContreAttaque;
-                @ContreAttaque.performed += instance.OnContreAttaque;
-                @ContreAttaque.canceled += instance.OnContreAttaque;
+                @ResetPointEncrage.started += instance.OnResetPointEncrage;
+                @ResetPointEncrage.performed += instance.OnResetPointEncrage;
+                @ResetPointEncrage.canceled += instance.OnResetPointEncrage;
+                @Turn.started += instance.OnTurn;
+                @Turn.performed += instance.OnTurn;
+                @Turn.canceled += instance.OnTurn;
             }
         }
     }
@@ -345,6 +373,7 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
         void OnAttaqueLourde(InputAction.CallbackContext context);
         void OnAttaqueRapide(InputAction.CallbackContext context);
         void OnAttaqueLongueDistance(InputAction.CallbackContext context);
-        void OnContreAttaque(InputAction.CallbackContext context);
+        void OnResetPointEncrage(InputAction.CallbackContext context);
+        void OnTurn(InputAction.CallbackContext context);
     }
 }

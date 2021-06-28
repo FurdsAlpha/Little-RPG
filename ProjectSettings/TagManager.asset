@@ -7,7 +7,9 @@ TagManager:
   - Attaque Panel
   - Rooms
   - SpawnPoint
-  - TestTag
+  - Enemy
+  - NextRoom
+  - PointEncrage
   layers:
   - Default
   - TransparentFX
@@ -18,9 +20,9 @@ TagManager:
   - 
   - 
   - Obstacle
-  - 
-  - 
-  - 
+  - NextRoom
+  - Enemy
+  - Player
   - 
   - 
   - 

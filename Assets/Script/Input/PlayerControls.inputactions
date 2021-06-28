@@ -54,9 +54,17 @@
                     "interactions": ""
                 },
                 {
-                    "name": "ContreAttaque",
+                    "name": "ResetPointEncrage",
                     "type": "Button",
                     "id": "1f2bf8c2-63f0-45f8-b4d0-b59b12e67b4f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Turn",
+                    "type": "Button",
+                    "id": "aaa2d686-f28d-4d5d-8c37-ff7fba731366",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -121,11 +129,11 @@
                 {
                     "name": "",
                     "id": "4eb62176-8044-4512-97af-186b3dfddcb2",
-                    "path": "",
+                    "path": "<Keyboard>/r",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "ContreAttaque",
+                    "action": "ResetPointEncrage",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -183,6 +191,17 @@
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "2ef95888-e413-44b3-ba38-9eab7ce7c091",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Turn",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
