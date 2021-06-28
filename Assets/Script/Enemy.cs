@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     public Vector2 turnCD;
     public float attackCD;
     public float AttackRange;
+    public GameObject selfUI;
 
     public void Start()
     {
@@ -17,8 +18,10 @@ public class Enemy : MonoBehaviour
     }
     public void Target()
     {
+        player.GetComponent<Deplacement>().enCombat = true;
         player.GetComponent<Deplacement>().adversaire = this.gameObject;
         player.GetComponent<Deplacement>().SetPoinEncrage();
+        player.GetComponent<Deplacement>().attackPanel.SetActive(true);
     }
     
     public void GetAttaked()
