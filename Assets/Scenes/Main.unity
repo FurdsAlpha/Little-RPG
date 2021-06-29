@@ -1610,7 +1610,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 1
+  m_FillAmount: 0.75
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -2008,7 +2008,7 @@ MonoBehaviour:
   LifeBareUI: {fileID: 556020633}
   LifeBareUIText: {fileID: 1120052708}
   Life: 100
-  _Life: 100
+  _Life: 75
   degatIdeal: 0
   degatAcceptable: 0
   DistanceIdeal: {x: 0, y: 2}
@@ -2975,7 +2975,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 100 / 100
+  m_text: 75 / 100
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4059,7 +4059,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1607996645
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4705,7 +4705,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7756300254205837169, guid: 129be93226bbad04ea581cd3661d5e06, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7756300254205837169, guid: 129be93226bbad04ea581cd3661d5e06, type: 3}
       propertyPath: m_TagString
