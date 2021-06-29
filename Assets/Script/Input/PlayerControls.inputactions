@@ -22,33 +22,17 @@
                     "interactions": ""
                 },
                 {
+                    "name": "Blocker",
+                    "type": "Button",
+                    "id": "31fa8877-4a3c-4eba-abf6-cdc7a1209aa7",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
                     "name": "Esquive",
                     "type": "Button",
                     "id": "a30120f7-4edb-4a71-a320-563430524abc",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "AttaqueLourde",
-                    "type": "Button",
-                    "id": "b944d875-fff1-4359-a811-24514184dde9",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "AttaqueRapide",
-                    "type": "Button",
-                    "id": "4b08826c-5a51-4144-bcf3-89e093bc3b32",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "AttaqueLongueDistance",
-                    "type": "Button",
-                    "id": "31fa8877-4a3c-4eba-abf6-cdc7a1209aa7",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -74,7 +58,7 @@
                 {
                     "name": "",
                     "id": "5c64c984-97d9-4acc-8217-722b0bb43e90",
-                    "path": "<Keyboard>/space",
+                    "path": "<Keyboard>/q",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -84,45 +68,12 @@
                 },
                 {
                     "name": "",
-                    "id": "672831ee-bd2d-4062-8471-4ec3e140d19c",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Esquive",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "bff2d8a8-f01d-460d-b9f5-53eebfe7f587",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "AttaqueLourde",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "8ca6acdb-6cfa-4163-a159-6d4ae4a6a9dc",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "AttaqueRapide",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "70727076-1c42-4fd3-bd85-00e0385d3764",
-                    "path": "",
+                    "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "AttaqueLongueDistance",
+                    "action": "Blocker",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -200,6 +151,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Turn",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "672831ee-bd2d-4062-8471-4ec3e140d19c",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Esquive",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -35,33 +35,17 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
+                    ""name"": ""Blocker"",
+                    ""type"": ""Button"",
+                    ""id"": ""31fa8877-4a3c-4eba-abf6-cdc7a1209aa7"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
                     ""name"": ""Esquive"",
                     ""type"": ""Button"",
                     ""id"": ""a30120f7-4edb-4a71-a320-563430524abc"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
-                    ""name"": ""AttaqueLourde"",
-                    ""type"": ""Button"",
-                    ""id"": ""b944d875-fff1-4359-a811-24514184dde9"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
-                    ""name"": ""AttaqueRapide"",
-                    ""type"": ""Button"",
-                    ""id"": ""4b08826c-5a51-4144-bcf3-89e093bc3b32"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
-                    ""name"": ""AttaqueLongueDistance"",
-                    ""type"": ""Button"",
-                    ""id"": ""31fa8877-4a3c-4eba-abf6-cdc7a1209aa7"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -87,7 +71,7 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""5c64c984-97d9-4acc-8217-722b0bb43e90"",
-                    ""path"": ""<Keyboard>/space"",
+                    ""path"": ""<Keyboard>/q"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -97,45 +81,12 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""672831ee-bd2d-4062-8471-4ec3e140d19c"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Esquive"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""bff2d8a8-f01d-460d-b9f5-53eebfe7f587"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""AttaqueLourde"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""8ca6acdb-6cfa-4163-a159-6d4ae4a6a9dc"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""AttaqueRapide"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""70727076-1c42-4fd3-bd85-00e0385d3764"",
-                    ""path"": """",
+                    ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""AttaqueLongueDistance"",
+                    ""action"": ""Blocker"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -215,6 +166,17 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
                     ""action"": ""Turn"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""672831ee-bd2d-4062-8471-4ec3e140d19c"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Esquive"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -225,10 +187,8 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
         m_Combat = asset.FindActionMap("Combat", throwIfNotFound: true);
         m_Combat_Move = m_Combat.FindAction("Move", throwIfNotFound: true);
         m_Combat_Attaque = m_Combat.FindAction("Attaque", throwIfNotFound: true);
+        m_Combat_Blocker = m_Combat.FindAction("Blocker", throwIfNotFound: true);
         m_Combat_Esquive = m_Combat.FindAction("Esquive", throwIfNotFound: true);
-        m_Combat_AttaqueLourde = m_Combat.FindAction("AttaqueLourde", throwIfNotFound: true);
-        m_Combat_AttaqueRapide = m_Combat.FindAction("AttaqueRapide", throwIfNotFound: true);
-        m_Combat_AttaqueLongueDistance = m_Combat.FindAction("AttaqueLongueDistance", throwIfNotFound: true);
         m_Combat_ResetPointEncrage = m_Combat.FindAction("ResetPointEncrage", throwIfNotFound: true);
         m_Combat_Turn = m_Combat.FindAction("Turn", throwIfNotFound: true);
     }
@@ -282,10 +242,8 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
     private ICombatActions m_CombatActionsCallbackInterface;
     private readonly InputAction m_Combat_Move;
     private readonly InputAction m_Combat_Attaque;
+    private readonly InputAction m_Combat_Blocker;
     private readonly InputAction m_Combat_Esquive;
-    private readonly InputAction m_Combat_AttaqueLourde;
-    private readonly InputAction m_Combat_AttaqueRapide;
-    private readonly InputAction m_Combat_AttaqueLongueDistance;
     private readonly InputAction m_Combat_ResetPointEncrage;
     private readonly InputAction m_Combat_Turn;
     public struct CombatActions
@@ -294,10 +252,8 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
         public CombatActions(@PlayerActionControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Combat_Move;
         public InputAction @Attaque => m_Wrapper.m_Combat_Attaque;
+        public InputAction @Blocker => m_Wrapper.m_Combat_Blocker;
         public InputAction @Esquive => m_Wrapper.m_Combat_Esquive;
-        public InputAction @AttaqueLourde => m_Wrapper.m_Combat_AttaqueLourde;
-        public InputAction @AttaqueRapide => m_Wrapper.m_Combat_AttaqueRapide;
-        public InputAction @AttaqueLongueDistance => m_Wrapper.m_Combat_AttaqueLongueDistance;
         public InputAction @ResetPointEncrage => m_Wrapper.m_Combat_ResetPointEncrage;
         public InputAction @Turn => m_Wrapper.m_Combat_Turn;
         public InputActionMap Get() { return m_Wrapper.m_Combat; }
@@ -315,18 +271,12 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
                 @Attaque.started -= m_Wrapper.m_CombatActionsCallbackInterface.OnAttaque;
                 @Attaque.performed -= m_Wrapper.m_CombatActionsCallbackInterface.OnAttaque;
                 @Attaque.canceled -= m_Wrapper.m_CombatActionsCallbackInterface.OnAttaque;
+                @Blocker.started -= m_Wrapper.m_CombatActionsCallbackInterface.OnBlocker;
+                @Blocker.performed -= m_Wrapper.m_CombatActionsCallbackInterface.OnBlocker;
+                @Blocker.canceled -= m_Wrapper.m_CombatActionsCallbackInterface.OnBlocker;
                 @Esquive.started -= m_Wrapper.m_CombatActionsCallbackInterface.OnEsquive;
                 @Esquive.performed -= m_Wrapper.m_CombatActionsCallbackInterface.OnEsquive;
                 @Esquive.canceled -= m_Wrapper.m_CombatActionsCallbackInterface.OnEsquive;
-                @AttaqueLourde.started -= m_Wrapper.m_CombatActionsCallbackInterface.OnAttaqueLourde;
-                @AttaqueLourde.performed -= m_Wrapper.m_CombatActionsCallbackInterface.OnAttaqueLourde;
-                @AttaqueLourde.canceled -= m_Wrapper.m_CombatActionsCallbackInterface.OnAttaqueLourde;
-                @AttaqueRapide.started -= m_Wrapper.m_CombatActionsCallbackInterface.OnAttaqueRapide;
-                @AttaqueRapide.performed -= m_Wrapper.m_CombatActionsCallbackInterface.OnAttaqueRapide;
-                @AttaqueRapide.canceled -= m_Wrapper.m_CombatActionsCallbackInterface.OnAttaqueRapide;
-                @AttaqueLongueDistance.started -= m_Wrapper.m_CombatActionsCallbackInterface.OnAttaqueLongueDistance;
-                @AttaqueLongueDistance.performed -= m_Wrapper.m_CombatActionsCallbackInterface.OnAttaqueLongueDistance;
-                @AttaqueLongueDistance.canceled -= m_Wrapper.m_CombatActionsCallbackInterface.OnAttaqueLongueDistance;
                 @ResetPointEncrage.started -= m_Wrapper.m_CombatActionsCallbackInterface.OnResetPointEncrage;
                 @ResetPointEncrage.performed -= m_Wrapper.m_CombatActionsCallbackInterface.OnResetPointEncrage;
                 @ResetPointEncrage.canceled -= m_Wrapper.m_CombatActionsCallbackInterface.OnResetPointEncrage;
@@ -343,18 +293,12 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
                 @Attaque.started += instance.OnAttaque;
                 @Attaque.performed += instance.OnAttaque;
                 @Attaque.canceled += instance.OnAttaque;
+                @Blocker.started += instance.OnBlocker;
+                @Blocker.performed += instance.OnBlocker;
+                @Blocker.canceled += instance.OnBlocker;
                 @Esquive.started += instance.OnEsquive;
                 @Esquive.performed += instance.OnEsquive;
                 @Esquive.canceled += instance.OnEsquive;
-                @AttaqueLourde.started += instance.OnAttaqueLourde;
-                @AttaqueLourde.performed += instance.OnAttaqueLourde;
-                @AttaqueLourde.canceled += instance.OnAttaqueLourde;
-                @AttaqueRapide.started += instance.OnAttaqueRapide;
-                @AttaqueRapide.performed += instance.OnAttaqueRapide;
-                @AttaqueRapide.canceled += instance.OnAttaqueRapide;
-                @AttaqueLongueDistance.started += instance.OnAttaqueLongueDistance;
-                @AttaqueLongueDistance.performed += instance.OnAttaqueLongueDistance;
-                @AttaqueLongueDistance.canceled += instance.OnAttaqueLongueDistance;
                 @ResetPointEncrage.started += instance.OnResetPointEncrage;
                 @ResetPointEncrage.performed += instance.OnResetPointEncrage;
                 @ResetPointEncrage.canceled += instance.OnResetPointEncrage;
@@ -369,10 +313,8 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
     {
         void OnMove(InputAction.CallbackContext context);
         void OnAttaque(InputAction.CallbackContext context);
+        void OnBlocker(InputAction.CallbackContext context);
         void OnEsquive(InputAction.CallbackContext context);
-        void OnAttaqueLourde(InputAction.CallbackContext context);
-        void OnAttaqueRapide(InputAction.CallbackContext context);
-        void OnAttaqueLongueDistance(InputAction.CallbackContext context);
         void OnResetPointEncrage(InputAction.CallbackContext context);
         void OnTurn(InputAction.CallbackContext context);
     }

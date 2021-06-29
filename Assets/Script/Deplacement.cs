@@ -2,10 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 using TMPro;
 
 public class Deplacement : MonoBehaviour
 {
+    [Header("Statistique Player")]
+    public Image LifeBareUI;
+    public TextMeshProUGUI LifeBareUIText;
+    public float Life;
+    public float _Life;
+    public float degatIdeal;
+    public float degatAcceptable;
+    public Vector2 DistanceIdeal;
+    public Vector2 DistanceAcceptable;
     [Header("Déplacement Settings")]
     public Rigidbody rigidBody;
     public Vector2 MovementDirection;
@@ -21,6 +31,7 @@ public class Deplacement : MonoBehaviour
     public float distance;
     [Header("UI Settings")]
     public GameObject attackPanel;
+    public GameObject MiniMap;
     public TextMeshProUGUI A;
     public TextMeshProUGUI Z;
     public TextMeshProUGUI E;
@@ -32,20 +43,31 @@ public class Deplacement : MonoBehaviour
         rigidBody = this.GetComponent<Rigidbody>();
         Self = this.gameObject;
         poinDAncrage = GameObject.FindGameObjectWithTag("PointEncrage");
-        SetPoinEncrage();
+        enCombat = false;
     }
 
     void Update()
     {
+        stat();
         if (enCombat == true)
         {
             Turn();
             SetLignePosition();
             SetText();
+            attackPanel.SetActive(true);
+            MiniMap.SetActive(false);
         }
         else
         {
             Move();
+            attackPanel.SetActive(false);
+            MiniMap.SetActive(true);
+        }
+        esquive -= 1 * Time.deltaTime;
+        //LifeBareUI.fillAmount = _Life / Life;
+        if(GameObject.FindGameObjectWithTag("Enemy") == null)
+        {
+            enCombat = false;
         }
     }
 
@@ -61,13 +83,16 @@ public class Deplacement : MonoBehaviour
     }
     public void OnTurn()
     {
-        TurnDirection = 1f;
+        if(TurnDirection < 0.1)
+        {
+            TurnDirection = 1f;
+        }
+        else if(TurnDirection > 0.1)
+        {
+            TurnDirection = -1f;
+        }
     }
     
-    public void OnResetPointEncrage()
-    {
-        SetPoinEncrage();
-    }
     
     public void Turn()
     {
@@ -88,53 +113,17 @@ public class Deplacement : MonoBehaviour
         ligne.SetPosition(1, adversaire.transform.position + new Vector3(0, 0, 1));
         distance = Mathf.Abs(adversaire.transform.position.x - Self.transform.position.x) + Mathf.Abs(adversaire.transform.position.y - Self.transform.position.y);
 
-        if (arme is ArmeLongRange)
+        if (distance < DistanceIdeal.y & distance > DistanceIdeal.x)
         {
-            ArmeLongRange o = arme as ArmeLongRange;
-            if (distance < o.DistanceIdeal.y & distance > o.DistanceIdeal.y)
-            {
-                ligne.material = ligne.materials[0];
-            }
-            else if (distance > o.DistanceAcceptable.y & distance < o.DistanceAcceptable.y)
-            {
-                ligne.material = ligne.materials[1];
-            }
-            else
-            {
-                ligne.material = ligne.materials[2];
-            }
+            ligne.material.color = Color.green;
         }
-        if (arme is ArmeMidRange)
+        else if (distance < DistanceAcceptable.y & distance > DistanceAcceptable.x)
         {
-            ArmeMidRange o = arme as ArmeMidRange;
-            if (distance > o.DistanceIdeal.y & distance < o.DistanceIdeal.y)
-            {
-                ligne.material = ligne.materials[0];
-            }
-            else if (distance > o.DistanceAcceptable.y & distance < o.DistanceAcceptable.y)
-            {
-                ligne.material = ligne.materials[1];
-            }
-            else
-            {
-                ligne.material = ligne.materials[2];
-            }
+            ligne.material.color = Color.yellow;
         }
-        if (arme is ArmeLowRange)
+        else
         {
-            ArmeLowRange o = arme as ArmeLowRange;
-            if (distance > o.DistanceIdeal.y & distance < o.DistanceIdeal.y)
-            {
-                ligne.material = ligne.materials[0];
-            }
-            else if (distance > o.DistanceAcceptable.y & distance < o.DistanceAcceptable.y)
-            {
-                ligne.material = ligne.materials[1];
-            }
-            else
-            {
-                ligne.material = ligne.materials[2];
-            }
+            ligne.material.color = Color.white;
         }
     }
     public void SetText()
@@ -142,5 +131,53 @@ public class Deplacement : MonoBehaviour
         A.SetText(arme.A);
         Z.SetText(arme.Z);
         E.SetText(arme.E);
+        R.SetText(arme.R);
+    }
+    public void OnAttaque()
+    {
+        adversaire.GetComponent<Enemy>().GetAttaked();
+        Debug.Log("attaque  " + adversaire.GetComponent<Enemy>()._Life);
+    }
+    public void OnBlocker()
+    {
+
+    }
+    float esquive;
+    public void OnEsquive()
+    {
+        esquive = 3f;
+    }
+    public void OnResetPointEncrage()
+    {
+        SetPoinEncrage();
+    }
+    public void stat()
+    {
+        if (arme is ArmeLongRange)
+        {
+            ArmeLongRange o = arme as ArmeLongRange;
+            degatAcceptable = o.degatAcceptable;
+            DistanceAcceptable = o.DistanceAcceptable;
+            degatIdeal = o.degatIdeal;
+            DistanceIdeal = o.DistanceIdeal;
+        }
+        else if (arme is ArmeMidRange)
+        {
+            ArmeMidRange o = arme as ArmeMidRange;
+            degatAcceptable = o.degatAcceptable;
+            DistanceAcceptable = o.DistanceAcceptable;
+            degatIdeal = o.degatIdeal;
+            DistanceIdeal = o.DistanceIdeal;
+        }
+        else if (arme is ArmeLowRange)
+        {
+            ArmeLowRange o = arme as ArmeLowRange;
+            degatAcceptable = o.degatAcceptable;
+            DistanceAcceptable = o.DistanceAcceptable;
+            degatIdeal = o.degatIdeal;
+            DistanceIdeal = o.DistanceIdeal;
+        }
+        LifeBareUIText.SetText(_Life.ToString() + " / " + Life.ToString());
+        LifeBareUI.fillAmount = _Life / Life;
     }
 }

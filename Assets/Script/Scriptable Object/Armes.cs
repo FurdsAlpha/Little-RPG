@@ -5,7 +5,8 @@ using UnityEngine;
 public class Armes : ScriptableObject
 {
     public string Name;
-    public float degat;
+    public float degatIdeal;
+    public float degatAcceptable;
     public string A;
     public string Z;
     public string E;

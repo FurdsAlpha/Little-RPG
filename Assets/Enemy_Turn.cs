@@ -21,7 +21,7 @@ public class Enemy_Turn : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (Self.GetComponent<Enemy>().AttackRange < Player.GetComponent<Deplacement>().distance)
+        if ( Player.GetComponent<Deplacement>().distance < Self.GetComponent<Enemy>().AttackRange)
         {
             AttackCD -= 1 * Time.deltaTime;
         }
@@ -38,8 +38,8 @@ public class Enemy_Turn : StateMachineBehaviour
         }
         Self.transform.RotateAround(PointEncrage.transform.position, new Vector3(0, 0, TurnDirection), 20 * Time.deltaTime);
         Self.GetComponent<Enemy>().selfUI.transform.rotation = Quaternion.Euler(0,0,0);
+        Self.GetComponent<Enemy>().selfUI.transform.RotateAround(Self.transform.position, new Vector3(0, 0, TurnDirection), 20 * Time.deltaTime);
     }
-
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {

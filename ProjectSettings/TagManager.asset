@@ -10,6 +10,9 @@ TagManager:
   - Enemy
   - NextRoom
   - PointEncrage
+  - _MainCamera
+  - EnemyAttack
+  - PlayerAttack
   layers:
   - Default
   - TransparentFX
@@ -23,7 +26,7 @@ TagManager:
   - NextRoom
   - Enemy
   - Player
-  - 
+  - Minimap
   - 
   - 
   - 
